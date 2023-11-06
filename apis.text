@@ -1,0 +1,164 @@
+-----------------------------------------------------------------
+
+Create User (Signup)
+URL: /user/signup
+Method: POST
+Request Body:
+  name (string, required)
+  email (string, required, unique)
+  password (string, required)
+  userType (string, required)
+Response:
+  status (number)
+  success (boolean)
+  msg (string)
+  data (object)
+
+-----------------------------------------------------------------
+
+User Login
+URL: /user/signin
+Method: POST
+Request Body:
+  email (string, required)
+  password (string, required)
+Response:
+  status (number)
+  success (boolean)
+  msg (string)
+  token (string)
+
+-----------------------------------------------------------------
+
+Update User Profile
+URL: /user/profile
+Method: PUT
+Request Body:
+  name (string, optional)
+  email (string, optional)
+  userType (string, optional)
+Response:
+  status (number)
+  success (boolean)
+  msg (string)
+  data (object)
+
+-----------------------------------------------------------------
+
+View Own Job Postings
+URL: /user/job/own
+Method: GET
+Response:
+  status (number)
+  success (boolean)
+  data (array of job objects)
+
+-----------------------------------------------------------------
+
+Job API:
+
+-----------------------------------------------------------------
+
+Create Job Opening
+URL: /job/create
+Method: POST
+Request Body:
+  title (string, required)
+  description (string, required)
+Response:
+  status (number)
+  success (boolean)
+  msg (string)
+  data (object)
+
+-----------------------------------------------------------------
+
+Update Job Opening
+URL: /job/update
+Method: PUT
+Request Body:
+  jobId (string, required)
+  title (string, optional)
+  description (string, optional)
+Response:
+  status (number)
+  success (boolean)
+  msg (string)
+  data (object)
+
+-----------------------------------------------------------------
+
+Close Job Opening
+URL: /job/close/:jobId
+Method: PUT
+Response:
+  status (number)
+  success (boolean)
+  msg (string)
+  data (object)
+
+-----------------------------------------------------------------
+
+View All Job Applications
+URL: /job/applications/:jobId
+Method: GET
+Response:
+  status (number)
+  success (boolean)
+  data (array of applicant objects)
+
+-----------------------------------------------------------------
+
+Applicant API:
+
+-----------------------------------------------------------------
+
+Apply for Job Opening
+URL: /applicant/apply
+Method: POST
+Request Body:
+  name (string, required)
+  email (string, required)
+  jobId (string, required)
+Response:
+  status (number)
+  success (boolean)
+  msg (string)
+  data (object)
+
+-----------------------------------------------------------------
+
+View Own Applications
+URL: /applicant/own
+Method: GET
+Response:
+  status (number)
+  success (boolean)
+  data (array of application objects)
+
+-----------------------------------------------------------------
+
+Cancel Application
+URL: /applicant/cancel/:applicantId
+Method: DELETE
+Response:
+  status (number)
+  success (boolean)
+  msg (string)
+
+-----------------------------------------------------------------
+
+Select Applicant
+URL: /applicant/select
+Method: PUT
+Request Body:
+  jobId (string, required)
+  applicantId (string, required)
+  status (string, required, options: 'selected', 'rejected', 'pending')
+Response:
+  status (number)
+  success (boolean)
+  msg (string)
+  data (object)
+
+-----------------------------------------------------------------
