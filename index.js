@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const userRoutes = require('./routes/userRoutes');
 const jobRoutes = require('./routes/jobRoutes');
 const applicantRoutes = require('./routes/applicantRoutes');
+require('dotenv').config();
+
 
 const port = process.env.port || 3000;
 
