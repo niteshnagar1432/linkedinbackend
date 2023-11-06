@@ -6,7 +6,7 @@ const userRoutes = require('./routes/userRoutes');
 const jobRoutes = require('./routes/jobRoutes');
 const applicantRoutes = require('./routes/applicantRoutes');
 
-const port = 3001;
+const port = ;
 
 const app = express();
 
