@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 app.use(cors()); // Allow access from any domain
 app.use(express.json());
 
-const uri = 'mongodb+srv://niteshnagar1142002:WqmYZATrn2H8P6qm@cluster0.h7rsur3.mongodb.net/whatsapp';
+const uri = 'mongodb+srv://niteshnagar1142002:WqmYZATrn2H8P6qm@cluster0.h7rsur3.mongodb.net/linkedin';
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -34,4 +34,4 @@ app.get('*', (req, res) => {
     res.status(404).send({ status: 404, success: false, msg: 'Route not found' });
 });
 
-app.listen(port, () => console.log(`Application Running On http://127.0.0.1:${port}/`));
+app.listen( () => console.log(`Application Running On http://127.0.0.1:${port}/`));
