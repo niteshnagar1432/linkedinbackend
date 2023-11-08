@@ -1,3 +1,4 @@
+require('dotenv').config({path:'./.env'});
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -6,9 +7,6 @@ const userRoutes = require('./routes/userRoutes');
 const jobRoutes = require('./routes/jobRoutes');
 const applicantRoutes = require('./routes/applicantRoutes');
 require('dotenv').config();
-
-
-const port = process.env.port || 3000;
 
 const app = express();
 
@@ -34,4 +32,4 @@ app.get('*', (req, res) => {
     res.status(404).send({ status: 404, success: false, msg: 'Route not found' });
 });
 
-app.listen( () => console.log(`Application Running On http://127.0.0.1:${port}/`));
+app.listen( process.env.PORT,() => console.log(`Application Running On http://127.0.0.1:${process.env.PORT}/`));
